@@ -1,14 +1,12 @@
 version: "3.7"
-
 services:
-
-  app_proxy:
+  outline-client:
+    image: ghcr.io/jigsaw/outline-client@sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  # Укажите digest для образа
+    container_name: ${APP_ID}_app
+    restart: unless-stopped
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    ports:
+      - "${APP_PORT}:3000"  # Порт для веб-интерфейса
     environment:
-      # The format here is: <app-id>_<docker-service-name>_1
-      APP_HOST: sparkles-hello-world_server_1
-      APP_PORT: 3000
-    
-  server:
-    image: getumbrel/community-app-store-hello-world:latest
-    user: "1000:1000"
-    init: true
+      - OUTLINE_SERVER_HOST=${OUTLINE_SERVER_HOST}  # Переменная для указания адреса Outline сервера
