@@ -1,0 +1,11 @@
+id: my-store-outline-client
+name: Outline Client
+tagline: Secure VPN client for private internet access
+icon: https://example.com/outline-icon.png
+version: 1.14.0  # Укажите актуальную версию Outline Client
+description: |
+  Outline Client allows you to connect to an Outline VPN server for secure and private internet access.
+developer: Jigsaw
+website: https://getoutline.org
+category: Privacy
+permissions: []  # Укажите, если нужны доступы к другим приложениям, например, Bitcoin Node
